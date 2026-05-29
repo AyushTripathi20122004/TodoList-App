@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notes App</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="stylesheet"
+href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+</head>
+<body class="h-screen flex flex-col">
+    <nav class="border-b border-black/10 flex  items-center justify-between py-3 p-6">
+        <!-- logo -->
+        <div >
+            <div class="text-transparent bg-clip-text text-3xl font-semibold bg-gradient-to-br from-red-500 via-red-700 to-blue-700">
+                Notes
+            </div>
+        </div>
+        <!-- Search Bar -->
+         <div class="flex items-center border border-black/10 w-1/2  rounded-full overflow-hidden px-4">
+            <div>
+                <i class=" text-xl  text-gray-500  bi-search"></i>
+            </div>
+            <input class="py-3 text-gray-500/80 px-4 w-full focus:outline-none " type="text" placeholder="Search Notes">
+         </div>
+        <!-- bUTTON -->
+         <div>
+            <Button>
+                <i strokeWidth="8" class="bi font-semibold text-4xl text-black/70 bi-list"></i>
+            </Button>
+         </div>
+    </nav>
+    <main class="relative  h-screen p-4">
+        <div class="NotesCollector flex flex-wrap gap-2">
+
+        </div>
+
+        <div class="fixed top-[30rem] right-20">
+            <button onclick="" class="CreateButton h-14 w-14 rounded-full bg-[#964B00]">
+                <i class="bi bi-plus text-4xl text-white font-semibold"></i>
+            </button>
+        </div>
+
+
+        <!-- notes create page -->
+        <div  style="display: none;" class=" p-5 absolute top-0 bg-white  NotesCreate h-[90%]  w-[99%] justify-center  backdrop-blur-xl">
+            
+            <form action="" method="" id="form"  class="p-4 rounded-xl flex flex-col w-full min-w-[60rem] border border-black/10">
+                
+                <div class="flex justify-end w-full">
+                    <button class="PageCancel">
+                        <i class="bi text-3xl text-gray-500 font-semibold bi-x-square"></i>
+                    </button>
+                </div>  
+
+                <div class="flex justify-between h-full flex-col">
+                    <div class="">
+                        <!-- title -->
+                        <div class="w-full ">
+                            
+                            <input id="Title"  class=" placeholder:text-4xl p-2 text-4xl focus:outline-none w-full h-20 " type="text" placeholder="Title">
+                        </div>
+                        <!-- Start text -->
+                        <div class="w-full">
+                            <textarea name="" id="Text"  class="   w-full p-2 focus:outline-none"  placeholder="Start writing text" id=""></textarea>
+                        </div>
+                    </div>
+
+                    <!-- submit button -->
+                    <div>
+                        <div class="w-full flex justify-end">
+                            <button
+                            onclick="SubmitForm()"
+                             class="px-8 py-3 rounded-xl bg-gradient-to-br from-red-500 text-white font-semibold via-red-700 to-blue-700">Create Note</button>
+                        </div>
+                    </div>
+
+                </div>
+            </form>
+            <!-- form end here -->
+        </div>
+
+    </main>
+    <script src="Notes.js"></script>
+</body>
+</html>
